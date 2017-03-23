@@ -1,0 +1,24 @@
+// find jar file path :  SpringMail/build/libs/SpringMail-1.0.jar
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+sourceCompatibility = 1.7
+version = '1.0'
+
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'SpringMailTest',
+                   'Implementation-Version': 1.0
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'org.springframework', name: 'spring-context', version : '4.1.6.RELEASE'
+    compile 'org.springframework:spring-context-support:4.1.6.RELEASE'
+	compile 'javax.activation:activation:1.1.1'
+	compile 'javax.mail:mail:1.4.7'
+}
